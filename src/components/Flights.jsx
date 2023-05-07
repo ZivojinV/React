@@ -1,6 +1,4 @@
-import { Link } from "react-router-dom";
 import Flight from "./Flight";
-import Search from "./Search";
 
 const Flights = ({flights, getDepartures, getArrivals, getAll, SearchCity, addTicket}) => {
     const handleSearch = () => {

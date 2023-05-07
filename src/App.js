@@ -61,9 +61,8 @@ function App() {
   }
 
   function addFlight(date, from, to){
-    let temp = data;
-    console.log(getId());
-    temp.push(
+    // let temp = data;
+    data.push(
       {
         id: getId(),
         date: date,
@@ -72,7 +71,7 @@ function App() {
         type: isArriving(from, to)
       }
     );
-    
+    setFlights(data)
   }
 
   function SearchCity(city){
@@ -99,7 +98,7 @@ function App() {
       <div className='Body'>
         <div>
           <Routes>
-            <Route path='/' element={<Flights flights={flights} getDepartures={getDepartures} getArrivals={getArrivals} getAll={getAll}/>}/>
+            <Route path='/' element={<Flights flights={flights} getDepartures={getDepartures} getArrivals={getArrivals} getAll={getAll} SearchCity={SearchCity} addTicket={addTicket}/>}/>
             <Route path='/flights' element={<Flights flights={flights} getDepartures={getDepartures} getArrivals={getArrivals} getAll={getAll} SearchCity={SearchCity} addTicket={addTicket}/>}/>
             <Route path='/newflight' element={<AddNewFlight addFlight={addFlight}/>}/>
             <Route path='/tickets' element={<Tickets flights={tickets}/>}/>
