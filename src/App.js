@@ -85,12 +85,12 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-      {/* <Navbar switchIsAdmin={switchIsAdmin} isAdmin={isAdmin}/> */}
+      <Navbar switchIsAdmin={switchIsAdmin} isAdmin={isAdmin}/>
       <div className='Body'>
         <div>
           <Routes>
             <Route path='/' element={<Flights flights={flights} getDepartures={getDepartures} getArrivals={getArrivals} getAll={getAll}/>}/>
-            {/* <Route path='/flights' element={<Flights flights={flights} getDepartures={getDepartures} getArrivals={getArrivals} getAll={getAll} SearchCity={SearchCity} addTicket={addTicket}/>}/> */}
+            <Route path='/flights' element={<Flights flights={flights} getDepartures={getDepartures} getArrivals={getArrivals} getAll={getAll} SearchCity={SearchCity} addTicket={addTicket}/>}/>
             {/* <Route path='/newflight' element={<AddNewFlight addFlight={addFlight}/>}/> */}
             {/* <Route path='/tickets' element={<Tickets flights={tickets}/>}/> */}
           </Routes>
