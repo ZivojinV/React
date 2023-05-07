@@ -1,10 +1,10 @@
 import './App.css';
-// import Navbar from './components/Navbar';
+import Navbar from './components/Navbar';
 import { useState } from 'react';
 import Flights from './components/Flights';
 import { BrowserRouter, BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-// import AddNewFlight from './components/AddNewFlight';
-// import Tickets from './components/Tickets';
+import AddNewFlight from './components/AddNewFlight';
+import Tickets from './components/Tickets';
 
 function App() {
 
@@ -91,8 +91,8 @@ function App() {
           <Routes>
             <Route path='/' element={<Flights flights={flights} getDepartures={getDepartures} getArrivals={getArrivals} getAll={getAll}/>}/>
             <Route path='/flights' element={<Flights flights={flights} getDepartures={getDepartures} getArrivals={getArrivals} getAll={getAll} SearchCity={SearchCity} addTicket={addTicket}/>}/>
-            {/* <Route path='/newflight' element={<AddNewFlight addFlight={addFlight}/>}/> */}
-            {/* <Route path='/tickets' element={<Tickets flights={tickets}/>}/> */}
+            <Route path='/newflight' element={<AddNewFlight addFlight={addFlight}/>}/>
+            <Route path='/tickets' element={<Tickets flights={tickets}/>}/>
           </Routes>
         </div>
       </div>
