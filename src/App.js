@@ -10,21 +10,21 @@ function App() {
 
   const [data, setData] = useState([
     {
-      id: 1,
+      id: 0,
       date: "10/03/2023",
       from: "Vienna",
       to: "Belgrade",
       type: 'arrival',
     },
     {
-      id: 2,
+      id: 1,
       date: "16/03/2023",
       from: "London",
       to: "Belgrade",
       type: 'arrival',
     },
     {
-      id: 3,
+      id: 2,
       date: "05/03/2023",
       from: "Belgrade",
       to: "NYC",
@@ -52,17 +52,27 @@ function App() {
     return from==="Belgrade" ? "departure" : "arrival";
   }
 
+  function getId(){
+    let id = 0;
+    data.forEach(e => {
+      id = e.id
+    });
+    return ++id;
+  }
+
   function addFlight(date, from, to){
     let temp = data;
+    console.log(getId());
     temp.push(
       {
-        id: 4,
+        id: getId(),
         date: date,
         from: from,
         to: to,
         type: isArriving(from, to)
       }
     );
+    
   }
 
   function SearchCity(city){
